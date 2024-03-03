@@ -4,8 +4,17 @@ const typeDefs = `#graphql
         author: String
     }
     
+    type User{
+        fullName: String
+        email: String
+        password: String
+        googleId: String
+        picture: String
+    }
+    
     type Query{
         books: [Book]
+        users: [User]
     }
 `;
 
