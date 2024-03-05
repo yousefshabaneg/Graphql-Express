@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import AppError from "../helpers/AppError";
+import LoggerService from "../log/user.logger";
 
 const handleCastErrorDB = (err: any) => {
   const message = `Invalid ${err.path}: ${err.value}.`;
@@ -46,6 +47,8 @@ const ErrorController = (
   if (err.name === "JsonWebTokenError") error = handleJWTError();
   if (err.name === "TokenExpiredError") error = handleJWTExpiredError();
   sendErrorDev(error, req, res);
+  const logger = new LoggerService("errorController");
+  logger.log("error", error.message, error);
 };
 
 export default ErrorController;

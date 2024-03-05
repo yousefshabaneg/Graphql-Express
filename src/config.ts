@@ -10,6 +10,7 @@ const {
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
   COOKIE_SECRET,
+  LOG_FILE_PATH,
 } = process.env;
 
 export default {
@@ -23,4 +24,5 @@ export default {
   successLoginUrl: `http://localhost:5000/login-success`,
   errorLoginUrl: `http://localhost:5000/login-error`,
   cookieSecret: COOKIE_SECRET as string,
+  loggerPath: LOG_FILE_PATH as string,
 };

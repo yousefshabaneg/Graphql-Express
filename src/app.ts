@@ -8,6 +8,7 @@ import "./auth/loginWithGoogle";
 import passport from "passport";
 import cookieSession from "cookie-session";
 import config from "./config";
+
 const app: any = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
